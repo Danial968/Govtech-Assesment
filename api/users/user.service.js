@@ -42,7 +42,7 @@ module.exports = {
             [teachers], 
             function(error, results, fields){
             if(error){
-                console.log(error)
+                return callBack(error);
             }
             return callBack(null, results);
         });
@@ -50,7 +50,6 @@ module.exports = {
     },
 
     notification: (data, callBack) => {
-        console.log(data);
         var teacher = data.teacher;
         var students = data.notification.split(' ');
         let value = [];
