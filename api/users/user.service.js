@@ -51,7 +51,7 @@ module.exports = {
     getCommonStudents: (teachers, callBack) => {
 
         pool.query(
-            'select student from relationship where teacher in (?)', 
+            'select distinct student from relationship where teacher in (?)', 
             [teachers], 
             function(error, results, fields){
             if(error){

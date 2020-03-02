@@ -29,7 +29,6 @@ module.exports = {
 
     getCommonStudents: (req, res) => {
         const teacher = req.query.teacher;
-
         getCommonStudents(teacher, (err,results) => {
             if(err){
                 console.log(err);
@@ -37,7 +36,7 @@ module.exports = {
                     message: "Databse connection error"
                 });
             }
-
+            console.log(results);
             let value = []
             results.forEach(student => {
                 value.push(student.student)
