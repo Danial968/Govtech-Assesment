@@ -4,20 +4,27 @@
   "description": "Govtech assessment",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node app.js",
+    "test": "mocha --recursive --exit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/debug-agent": "^4.2.2",
+    "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mocha": "^7.1.0",
+    "mysql": "^2.18.1",
+    "serverless-http": "^2.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   },
   "engines": {
-    "node":"10.x"
+    "node": "10.x"
   }
 }

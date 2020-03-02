@@ -1,4 +1,4 @@
-const { suspend, notification, getCommonStudents, register } = require("./user.service")
+const { suspend, notification, getCommonStudents, register, teacher } = require("./user.service")
 
 
 module.exports = {
@@ -68,5 +68,18 @@ module.exports = {
                 recepients: value
             })
         })
+    },
+
+    teacher: (req, res) => {
+        teacher ((err, results) => {
+            if(err){
+                console.log(err);
+                return;
+            }
+
+            return res.json({
+                data: results
+            });
+        });
     }
 }

@@ -1,6 +1,19 @@
 const pool = require("../../config/database");
 
 module.exports = {
+    teacher:  callBack => {
+        pool.query(
+            `select * from teacher`,
+            [],
+            (error, results, fields) => {
+                if(error){
+                    return callBack(error);
+                }
+                return callBack(null, results)
+            }
+        );
+    },
+
     suspend: (data, callBack) => {
         pool.query(
             `update student set suspended = 1 where email = ?`,
